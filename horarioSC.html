@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Estilo general del cuerpo */
+        body {
+            font-family: Arial, sans-serif; /* Fuente para el cuerpo */
+            text-align: center; /* Centrar todo el contenido en el cuerpo */
+        }
+
+        /* Estilo para el título */
+        h1 {
+            margin-top: 20px; /* Espacio superior del título */
+            font-size: 2em; /* Tamaño de letra del título */
+        }
+
+        /* Estilo para centrar el iframe y hacerlo responsivo */
+        .responsive-iframe {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 150%; /* Proporción de 2:3 (más altura que ancho) */
+            overflow: hidden;
+            margin-top: 10px; /* Espacio entre el desplegable y el iframe */
+        }
+
+        /* El iframe ocupa todo el contenedor y se ajusta automáticamente */
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Aumenta el tamaño del iframe para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            .responsive-iframe {
+                padding-bottom: 180%; /* Más altura para pantallas pequeñas */
+            }
+        }
+
+        /* Estilo para el desplegable */
+        .dropdown {
+            margin: 20px 0; /* Espacio arriba y abajo del desplegable */
+        }
+
+        /* Estilo para el select */
+        select {
+            font-size: 1.5em; /* Aumentar el tamaño de la letra del desplegable */
+            padding: 10px; /* Espacio interno del desplegable */
+            width: 50%; /* Ancho del desplegable */
+            max-width: 300px; /* Ancho máximo del desplegable */
+            margin: 0 auto; /* Centrar el desplegable */
+            display: block; /* Convertir en bloque para centrar */
+        }
+    </style>
+</head>
+<body>
+    <h1>HORARIOS DE SALAS SC</h1> <!-- Título centrado -->
+
+    <div class="dropdown">
+        <label for="1070188708">Selecciona un salón:</label>
+        <select id="1070188708" onchange="changeSheet()">
+            <option value="1070188708">SC401</option>
+            <option value="785024764">SC402</option>
+        </select>
+    </div>
+
+    <div class="responsive-iframe">
+        <iframe id="sheetIframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHE-upxVNV5_AcIFdL9zh-IQdDOfUGhVevGLQJxVzin_1RsKcAtCqOaB6DDyXPPoLJX4iCQqSXIAAJ/pubhtml?widget=true&amp;headers=false"></iframe>
+    </div>
+
+    <script>
+        function changeSheet() {
+            var select = document.getElementById("1070188708");
+            var sheetName = select.value;
+            var baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRHE-upxVNV5_AcIFdL9zh-IQdDOfUGhVevGLQJxVzin_1RsKcAtCqOaB6DDyXPPoLJX4iCQqSXIAAJ/pubhtml?widget=true&amp;headers=false";
+            
+            // Modificar el src del iframe según el salón seleccionado
+            document.getElementById("sheetIframe").src = baseUrl + "&gid=" + sheetName;
+        }
+    </script>
+</body>
+</html>

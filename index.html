@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios Cuarto Piso Aula Sur</title>
+    <style>
+        /* Asegura que todo esté centrado y ocupe todo el ancho en móviles */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        /* Título encima de los botones */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Contenedor de los botones */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 400px; /* Máximo ancho para pantallas grandes */
+        }
+
+        /* Estilo de los botones */
+        .button-container a {
+            display: block;
+            text-align: center;
+            padding: 15px 0;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Cambio de color al pasar el ratón sobre el botón */
+        .button-container a:hover {
+            background-color: darkred;
+        }
+
+        /* Hace que los botones se vean bien en móviles, tabletas y ordenadores */
+        @media (max-width: 768px) {
+            .button-container a {
+                font-size: 18px;
+                padding: 12px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-container a {
+                font-size: 16px;
+                padding: 10px 0;
+            }
+        }
+
+        /* Cuadro de texto debajo de los botones */
+        textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            box-sizing: border-box;
+            resize: none;
+        }
+
+        /* Estilo para el texto pequeño debajo del cuadro de texto */
+        .small-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Título de la página -->
+    <h1>Horarios Cuarto Piso Aula Sur</h1>
+
+    <!-- Contenedor de los botones -->
+    <div class="button-container">
+        <a href="horarioSA.html">SA</a>
+        <a href="horarioSB.html">SB</a>
+        <a href="horarioSC.html">SC</a>
+        <a href="horarioSD.html">SD</a>
+        <a href="horarioSF.html">SF</a>
+    </div>
+
+    <!-- Cuadro de texto para escribir un mensaje -->
+    <textarea rows="4" placeholder="Escribe un mensaje para los usuarios..."></textarea>
+
+    <!-- Texto pequeño debajo del cuadro de texto -->
+    <div class="small-text">
+        Escribe aquí cualquier comentario o sugerencia.
+    </div>
+
+</body>
+</html>
